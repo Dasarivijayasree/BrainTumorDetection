@@ -1,38 +1,120 @@
 .App {
-  text-align: center;
+    background-color: lightblue;
+}
+.homepage {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.b1 {
+    margin-right: 10px;
+    background-color: aqua;
+    padding: 3px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+}
+.b2 {
+    background-color: aqua;
+    padding: 3px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.register {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.regc1 {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.regc2 {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.user {
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 500;
 }
+.email {
+    margin-right: 61px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.pass {
+    margin-right: 25px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.regBtn {
+    display: flex;
+    justify-content: center;
+}
+.subBtn {
+    padding: 7px 60px;
+    font-size: 17px;
+    border-radius: 5px;
+    border-color: black;
+    border: none;
+    background-color: #45ccde;
+}
+.ml-5 { margin-left: 5px; }
+.ml-10 { margin-left: 10px; }
+.ml-15 { margin-left: 15px; }
+.ml-20 { margin-left: 20px; }
+.ml-25 { margin-left: 25px; }
+.ml-30 { margin-left: 30px; }
+.ml-35 { margin-left: 35px; }
+.ml-40 { margin-left: 40px; }
+.ml-45 { margin-left: 45px; }
+.ml-50 { margin-left: 50px; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.mr-5 { margin-right: 5px; }
+.mr-10 { margin-right: 10px; }
+.mr-15 { margin-right: 15px; }
+.mr-20 { margin-right: 20px; }
+.mr-25 { margin-right: 25px; }
+.mr-30 { margin-right: 30px; }
+.mr-35 { margin-right: 35px; }
+.mr-40 { margin-right: 40px; }
+.mr-45 { margin-right: 45px; }
+.mr-50 { margin-right: 50px; }
+
+.mt-5 { margin-top: 5px; }
+.mt-10 { margin-top: 10px; }
+.mt-15 { margin-top: 15px; }
+.mt-20 { margin-top: 20px; }
+.mt-25 { margin-top: 25px; }
+.mt-30 { margin-top: 30px; }
+.mt-35 { margin-top: 35px; }
+.mt-40 { margin-top: 40px; }
+.mt-45 { margin-top: 45px; }
+.mt-50 { margin-top: 50px; }
+.mt-80 { margin-top: 80px; }
+
+.mb-5 { margin-bottom: 5px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-15 { margin-bottom: 15px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-25 { margin-bottom: 25px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-35 { margin-bottom: 35px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-45 { margin-bottom: 45px; }
+.mb-50 { margin-bottom: 50px; }
