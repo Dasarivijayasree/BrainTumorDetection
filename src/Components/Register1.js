@@ -3,19 +3,53 @@ import "../App.css"
 import { useState } from 'react';
 
 const Register1 = () => {
-
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    username: '',
+    password: '',
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+    const response = await fetch('http://localhost:8080/user/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData), 
+    });
+  }
   return (
     <div>
       <h1>Register</h1>
-      <form>
+      <form onSubmit={handleSubmit}> 
         <div className="mb-10">
-          <label className="user" htmlFor="username">Username:</label>
+          <label className="first" htmlFor="firstName">First Name:</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            //value={formData.username}
-            // onChange={handleChange}
+            id="firsName"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="mb-10">
+          <label className="last" htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
             required
           />
         </div>
@@ -25,8 +59,19 @@ const Register1 = () => {
             type="email"
             id="email"
             name="email"
-            //value={formData.email}
-            // onChange={handleChange}
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="mb-10">
+          <label className="username" htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
             required
           />
         </div>
@@ -36,8 +81,8 @@ const Register1 = () => {
             type="password"
             id="password"
             name="password"
-            //value={formData.password}
-            // onChange={handleChange}
+            value={formData.password}
+            onChange={handleChange}
             required
           />
         </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import img from "../Images/brain-tumor.jpg";
-import Register1 from './Register1';
 import { useLocation } from 'react-router-dom';
 import Login1 from './Login1.js';
 
