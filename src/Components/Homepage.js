@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../App.css";
 
-
+//home page
 const Homepage = () => {
   const navigate = useNavigate();
   const [page, setPage] = useState("");
