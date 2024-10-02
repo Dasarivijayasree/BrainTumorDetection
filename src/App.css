@@ -47,18 +47,24 @@
     flex-direction: column;
 }
 
-.user {
-    margin-right: 20px;
+.first {
+    margin-right: 17px;
     font-size: 20px;
     font-weight: 500;
 }
+.last {
+    margin-right: 19px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .email {
-    margin-right: 61px;
+    margin-right: 65px;
     font-size: 20px;
     font-weight: 500;
 }
 .pass {
-    margin-right: 25px;
+    margin-right: 29px;
     font-size: 20px;
     font-weight: 500;
 }
@@ -73,6 +79,11 @@
     border-color: black;
     border: none;
     background-color: #45ccde;
+}
+.username {
+    margin-right: 23px;
+    font-size: 20px;
+    font-weight: 500;
 }
 .ml-5 { margin-left: 5px; }
 .ml-10 { margin-left: 10px; }

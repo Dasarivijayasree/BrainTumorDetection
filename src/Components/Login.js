@@ -1,56 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import img from "../Images/brain-tumor.jpg";
+import { useLocation } from 'react-router-dom';
+import Login1 from './Login1.js';
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    password: ''
-  });
-
-  
-
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
-
+  const location = useLocation();
+  const page = location.state?.page;
   return (
-    <div className="login">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+    <div className="register">
+      <div className="regc1">
+        <img src={img} alt="Brain Tumor"/>
+      </div>
+      <div className="regc2 mt-80">
+        <Login1/>
+      </div>
     </div>
   );
 }
