@@ -10,6 +10,8 @@ const Register1 = () => {
     username: '',
     password: '',
   });
+
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
