@@ -9,6 +9,7 @@ const BrainTumorTest = () => {
     setFile(e.target.files[0]);
   };
 
+  //This is handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
