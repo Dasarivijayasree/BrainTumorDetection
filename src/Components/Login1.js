@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const Login1 = () => {
+  const navigate = useNavigate();
   const [status, setStatus] = useState();
   const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
@@ -16,22 +17,23 @@ const Login1 = () => {
   };
   const handleSubmit=async(e)=>{
     e.preventDefault();
-    const response = await fetch('http://localhost:8080/user/login', {
+    const responseData = await fetch('http://localhost:8080/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData), 
     });
-    console.log(response);
+    const response = await responseData.json();
     setStatus(response.status)
     setMessage(response.message)
-    console.log("status of the api", status);
-    console.log(message);
+    if(status == 100){
+      navigate('/dashboard')
+    }
   }
   return (
     <div>
-        <h1>Login</h1>
+        <h1 className='text-mid'>Login</h1>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-10">
@@ -58,6 +60,10 @@ const Login1 = () => {
           </div>
           <button type="submit">Login</button>
         </form>
+
+        {status == 404 ? <div>Not found</div>:
+           <div></div>}
+
       </div>
     )
   }

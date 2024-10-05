@@ -5,16 +5,13 @@ import "../App.css";
 //home page
 const Homepage = () => {
   const navigate = useNavigate();
-  const [page, setPage] = useState("");
-
+  
   const handleRegisterClick = () => {
-    navigate('/register', { state: { page: 'register' } });
-    setPage("register");
+    navigate('/register');
   };
 
   const handleLoginClick = () => {
-    navigate('/login', { state: { page: 'login' } });
-    setPage("login");
+    navigate('/login');
   };
   return (
     <div className='homepage'>
