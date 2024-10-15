@@ -1,181 +1,603 @@
+/* General App Styles */
 .App {
-    background-color: lightblue;
+  background-color: rgb(255, 255, 255);
 }
+
+/* Homepage Background Effects */
+.homepage-container {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://path/to/your/background-image.jpg"); /* Background image with gradient overlay */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay for dark effect */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content Styling */
+.content {
+  text-align: center;
+  z-index: 1;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Title Styling */
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Subtitle Styling */
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* Brain Image Styling */
+.brain-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* About Section Styling */
+.about-section {
+  margin: 40px 0;
+}
+
+.about-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Button Styles */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Dashboard Container Styling */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2
+  ); /* Gradient Background */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Dashboard Content Styling */
+.dashboard-content {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px); /* Glassmorphism Effect */
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Title Styling */
+.dashboard-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Description Styling */
+.dashboard-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.dashboard-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-button:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 28px;
+  }
+
+  .dashboard-description {
+    font-size: 16px;
+  }
+
+  .dashboard-button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
+/* Container for Brain Tumor Test */
+.brain-tumor-test-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2
+  ); /* Gradient Background */
+  background-size: cover;
+  color: white;
+  padding: 20px;
+}
+
+/* Title Styling */
+.brain-tumor-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label Styling */
+.upload-label {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+/* File Input Styling */
+.file-input {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.file-input:focus {
+  border-color: #764ba2;
+  outline: none;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+  padding: 12px 30px;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark background */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease; /* Animation effect */
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Modal Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .brain-tumor-title {
+    font-size: 32px;
+  }
+
+  .file-input,
+  .submit-btn {
+    font-size: 16px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-description {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+}
+
 .homepage {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 .b1 {
-    margin-right: 10px;
-    background-color: aqua;
-    padding: 3px;
-    border: 2px solid black;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
-    font-style: normal;
-    color: black;
+  margin-right: 10px;
+  background-color: aqua;
+  padding: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  color: black;
 }
 .b2 {
-    background-color: aqua;
-    padding: 3px;
-    border: 2px solid black;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
-    font-style: normal;
-    color: black;
+  background-color: aqua;
+  padding: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  color: black;
 }
 
 .register {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .regc1 {
-    height: 100vh;
-    width: 100%;
-    object-fit: cover;
-    overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .regc2 {
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
 }
 
 .first {
-    margin-right: 17px;
-    font-size: 20px;
-    font-weight: 500;
+  margin-right: 17px;
+  font-size: 20px;
+  font-weight: 500;
 }
 .last {
-    margin-right: 19px;
-    font-size: 20px;
-    font-weight: 500;
+  margin-right: 19px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .email {
-    margin-right: 65px;
-    font-size: 20px;
-    font-weight: 500;
+  margin-right: 65px;
+  font-size: 20px;
+  font-weight: 500;
 }
 .pass {
-    margin-right: 29px;
-    font-size: 20px;
-    font-weight: 500;
+  margin-right: 29px;
+  font-size: 20px;
+  font-weight: 500;
 }
 .regBtn {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .subBtn {
-    padding: 7px 60px;
-    font-size: 17px;
-    border-radius: 5px;
-    border-color: black;
-    border: none;
-    background-color: #45ccde;
+  padding: 7px 60px;
+  font-size: 17px;
+  border-radius: 5px;
+  border-color: black;
+  border: none;
+  background-color: #45ccde;
 }
 .username {
-    margin-right: 23px;
-    font-size: 20px;
-    font-weight: 500;
+  margin-right: 23px;
+  font-size: 20px;
+  font-weight: 500;
 }
-.ml-5 { margin-left: 5px; }
-.ml-10 { margin-left: 10px; }
-.ml-15 { margin-left: 15px; }
-.ml-20 { margin-left: 20px; }
-.ml-25 { margin-left: 25px; }
-.ml-30 { margin-left: 30px; }
-.ml-35 { margin-left: 35px; }
-.ml-40 { margin-left: 40px; }
-.ml-45 { margin-left: 45px; }
-.ml-50 { margin-left: 50px; }
+.ml-5 {
+  margin-left: 5px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.ml-15 {
+  margin-left: 15px;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.ml-25 {
+  margin-left: 25px;
+}
+.ml-30 {
+  margin-left: 30px;
+}
+.ml-35 {
+  margin-left: 35px;
+}
+.ml-40 {
+  margin-left: 40px;
+}
+.ml-45 {
+  margin-left: 45px;
+}
+.ml-50 {
+  margin-left: 50px;
+}
 
-.mr-5 { margin-right: 5px; }
-.mr-10 { margin-right: 10px; }
-.mr-15 { margin-right: 15px; }
-.mr-20 { margin-right: 20px; }
-.mr-25 { margin-right: 25px; }
-.mr-30 { margin-right: 30px; }
-.mr-35 { margin-right: 35px; }
-.mr-40 { margin-right: 40px; }
-.mr-45 { margin-right: 45px; }
-.mr-50 { margin-right: 50px; }
+.mr-5 {
+  margin-right: 5px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mr-25 {
+  margin-right: 25px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.mr-35 {
+  margin-right: 35px;
+}
+.mr-40 {
+  margin-right: 40px;
+}
+.mr-45 {
+  margin-right: 45px;
+}
+.mr-50 {
+  margin-right: 50px;
+}
 
-.mt-5 { margin-top: 5px; }
-.mt-10 { margin-top: 10px; }
-.mt-15 { margin-top: 15px; }
-.mt-20 { margin-top: 20px; }
-.mt-25 { margin-top: 25px; }
-.mt-30 { margin-top: 30px; }
-.mt-35 { margin-top: 35px; }
-.mt-40 { margin-top: 40px; }
-.mt-45 { margin-top: 45px; }
-.mt-50 { margin-top: 50px; }
-.mt-80 { margin-top: 80px; }
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-25 {
+  margin-top: 25px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-35 {
+  margin-top: 35px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-45 {
+  margin-top: 45px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.mt-80 {
+  margin-top: 80px;
+}
 
-.mb-5 { margin-bottom: 5px; }
-.mb-10 { margin-bottom: 10px; }
-.mb-15 { margin-bottom: 15px; }
-.mb-20 { margin-bottom: 20px; }
-.mb-25 { margin-bottom: 25px; }
-.mb-30 { margin-bottom: 30px; }
-.mb-35 { margin-bottom: 35px; }
-.mb-40 { margin-bottom: 40px; }
-.mb-45 { margin-bottom: 45px; }
-.mb-50 { margin-bottom: 50px; }
-
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-25 {
+  margin-bottom: 25px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-35 {
+  margin-bottom: 35px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-45 {
+  margin-bottom: 45px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
 
 .text-mid {
-    text-align: center;
+  text-align: center;
 }
-
 
 /* 
 Brain Tumor Test component */
 
-
 .modal {
-    display: block;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    text-align: center;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .upload-label {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.upload-label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

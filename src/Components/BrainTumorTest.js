@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
+import "../App.css"; // Ensure your CSS is linked
 
 const BrainTumorTest = () => {
-    const [file, setFile] = useState(null);
+  const [file, setFile] = useState(null);
   const [prediction, setPrediction] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -9,20 +10,20 @@ const BrainTumorTest = () => {
     setFile(e.target.files[0]);
   };
 
-  //This is handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append("file", file);
 
     try {
-      const res = await fetch('', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+      const res = await fetch("http://localhost:8080/predict/tumor", {
+        method: "POST",
+        body: formData,
       });
-      setPrediction(res.data);
-      setShowModal(true); // Show the modal after prediction
+
+      const result = await res.json();
+      setPrediction(result);
+      setShowModal(true);
     } catch (error) {
       console.error(error);
     }
@@ -33,10 +34,10 @@ const BrainTumorTest = () => {
   };
 
   return (
-    <div>
-      <h1 className='text-mid'>Brain Tumor Detection Test</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-10">
+    <div className="brain-tumor-test-container">
+      <h1 className="brain-tumor-title">Brain Tumor Detection Test</h1>
+      <form onSubmit={handleSubmit} className="upload-form">
+        <div className="form-group">
           <label className="upload-label">Upload Brain Scan Image:</label>
           <input
             type="file"
@@ -44,21 +45,26 @@ const BrainTumorTest = () => {
             name="imageUpload"
             onChange={handleFileChange}
             required
+            className="file-input"
           />
         </div>
-        <button type="submit" className="subBtn">Upload and Test</button>
+        <button type="submit" className="submit-btn">
+          Upload and Test
+        </button>
       </form>
 
       {/* Modal */}
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={closeModal}>&times;</span>
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
             <h2>Prediction Result</h2>
             {prediction ? (
               <>
                 <p>Prediction: {prediction.prediction}</p>
-                {prediction.prediction === 'Tumor' && (
+                {prediction.prediction === "Tumor" && (
                   <p>Risk Level: {prediction.risk}</p>
                 )}
               </>
@@ -68,10 +74,8 @@ const BrainTumorTest = () => {
           </div>
         </div>
       )}
-
-
     </div>
-  )
-}
+  );
+};
 
-export default BrainTumorTest
+export default BrainTumorTest;
