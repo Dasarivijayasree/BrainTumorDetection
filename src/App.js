@@ -6,6 +6,7 @@ import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import BrainTumorTest from "./Components/BrainTumorTest";
 
+//This is App.js
 function App() {
   return (
     <Router>
@@ -14,8 +15,8 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path = "/dashboard" element={<Dashboard/>}/>
-          <Route path="/braintumortest" element={<BrainTumorTest/>}/>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/braintumortest" element={<BrainTumorTest />} />
         </Routes>
       </div>
     </Router>
