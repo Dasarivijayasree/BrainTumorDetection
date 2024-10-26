@@ -155,7 +155,15 @@
   margin-bottom: 30px;
 }
 
-/* Button Styling */
+/* Add to your CSS file */
+
+.dashboard-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .dashboard-button {
   padding: 15px 30px;
   font-size: 18px;
@@ -170,6 +178,14 @@
 .dashboard-button:hover {
   background-color: #007bff;
   transform: scale(1.05);
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .dashboard-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Mobile Responsiveness */
@@ -600,4 +616,83 @@ Brain Tumor Test component */
 .upload-label {
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+/* Model Statistics component*/
+/* Add to your CSS file */
+
+.model-stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to right, #667eea, #764ba2);
+  padding: 20px;
+  color: white;
+}
+
+/* Title Styling */
+.model-stats-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Chart Container Styling */
+.chart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  width: 95%; /* Adjust width as needed */
+  /* max-width: 800px; Prevents it from stretching too much */
+}
+
+.inner-container {
+  background-color: white; /* White background for the chart */
+  border: 2px solid #ddd; /* Light grey border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Inner padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-bottom: 30px; /* Space at the bottom */
+}
+
+.classification-table-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.classification-table {
+  width: 80%;
+  max-width: 800px;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.classification-table th,
+.classification-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.classification-table th {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+.classification-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.classification-table tr:hover {
+  background-color: #e6f7ff;
 }

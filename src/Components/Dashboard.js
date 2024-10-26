@@ -5,8 +5,12 @@ import "../App.css"; // Ensure your CSS is linked
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleTestClick = () => {
     navigate("/braintumortest");
+  };
+
+  const handleGraphClick = () => {
+    navigate("/modelstats");
   };
 
   return (
@@ -16,11 +20,16 @@ const Dashboard = () => {
         <p className="dashboard-description">
           With our advanced AI-based Brain Tumor Detection system, you can test
           for early signs of brain tumors. Click the button below to begin the
-          test.
+          test or view model statistics.
         </p>
-        <button className="dashboard-button" onClick={handleClick}>
-          Brain Tumor Test
-        </button>
+        <div className="dashboard-buttons">
+          <button className="dashboard-button" onClick={handleTestClick}>
+            Brain Tumor Test
+          </button>
+          <button className="dashboard-button" onClick={handleGraphClick}>
+            View Model Statistics
+          </button>
+        </div>
       </div>
     </div>
   );

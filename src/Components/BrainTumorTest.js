@@ -19,13 +19,20 @@ const BrainTumorTest = () => {
       const res = await fetch("http://localhost:8080/predict/tumor", {
         method: "POST",
         body: formData,
+        headers: {
+          // Add headers if needed
+        },
       });
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch prediction");
+      }
 
       const result = await res.json();
       setPrediction(result);
       setShowModal(true);
     } catch (error) {
-      console.error(error);
+      console.error("Error:", error);
     }
   };
 
@@ -64,8 +71,10 @@ const BrainTumorTest = () => {
             {prediction ? (
               <>
                 <p>Prediction: {prediction.prediction}</p>
-                {prediction.prediction === "Tumor" && (
-                  <p>Risk Level: {prediction.risk}</p>
+                {prediction.probabilities && (
+                  <p>
+                    Probabilities: {JSON.stringify(prediction.probabilities)}
+                  </p>
                 )}
               </>
             ) : (

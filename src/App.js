@@ -5,6 +5,7 @@ import Homepage from "./Components/Homepage";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import BrainTumorTest from "./Components/BrainTumorTest";
+import ModelStatistics from "./Components/ModelStatistics";
 
 //This is App.js
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/braintumortest" element={<BrainTumorTest />} />
+          <Route path="/modelstats" element={<ModelStatistics />} />
         </Routes>
       </div>
     </Router>
