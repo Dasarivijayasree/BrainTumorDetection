@@ -21,7 +21,8 @@ const OverallPerformanceChart = () => {
         cursor: "pointer",
         dataLabels: {
           enabled: true,
-          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+          format:
+            "<b>{point.name}</b>: {point.y:.2f} ({point.percentage:.1f}%)",
         },
       },
     },
@@ -32,23 +33,23 @@ const OverallPerformanceChart = () => {
         data: [
           {
             name: "Accuracy",
-            y: parseFloat(0.99), // Ensure values are properly parsed
-            color: "#3498db",
+            y: 1.0, // Accuracy from the classification report
+            color: "#3498db", // Blue
           },
           {
-            name: "Average Precision (Macro)",
-            y: parseFloat(0.99), // Ensure values are properly parsed
-            color: "#2ecc71",
+            name: "Precision (Macro)",
+            y: 1.0, // Macro precision from the classification report
+            color: "#2ecc71", // Green
           },
           {
-            name: "Average Recall (Macro)",
-            y: parseFloat(0.99), // Ensure values are properly parsed
-            color: "#e74c3c",
+            name: "Recall (Macro)",
+            y: 1.0, // Macro recall from the classification report
+            color: "#e74c3c", // Red
           },
           {
-            name: "Average F1-Score (Macro)",
-            y: parseFloat(0.99), // Ensure values are properly parsed
-            color: "#f1c40f",
+            name: "F1-Score (Macro)",
+            y: 1.0, // Macro F1-score from the classification report
+            color: "#f1c40f", // Yellow
           },
         ],
       },

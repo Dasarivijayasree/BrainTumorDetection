@@ -12,7 +12,7 @@ const CountChartTrain = () => {
       text: "Count of images in each class in Train Data",
     },
     xAxis: {
-      categories: ["glioma", "meningioma", "notumor", "pituitary"],
+      categories: ["aug_aca", "aug_n"],
       title: {
         text: null,
       },
@@ -52,7 +52,7 @@ const CountChartTrain = () => {
     series: [
       {
         name: "Count",
-        data: [1321, 1339, 1595, 1457], // Replace with your actual counts
+        data: [8070, 7960], // Replace with your actual counts
         color: "#3498db", // You can change the bar color if needed
       },
     ],

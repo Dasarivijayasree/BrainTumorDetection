@@ -10,7 +10,7 @@ const ModelStatistics = () => {
   return (
     <div className="model-stats-container">
       <h1 className="model-stats-title">
-        Brain Tumor Detection Model Statistics
+        Colon Cancer Detection Model Statistics
       </h1>
 
       <div className="chart-container">

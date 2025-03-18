@@ -1,6 +1,6 @@
 /* General App Styles */
 .App {
-  background-color: rgb(255, 255, 255);
+  background-color: #f0f4f8;
 }
 
 /* Homepage Background Effects */
@@ -12,17 +12,22 @@
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.7)
     ),
-    url("https://path/to/your/background-image.jpg"); /* Background image with gradient overlay */
+    url("https://www.pexels.com/photo/medical-equipment-in-hospital-5726708/"); /* Colonoscopy equipment */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* Overlay for dark effect */
+/* Overlay for colorful effect */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 105, 180, 0.8),
+    rgba(0, 191, 255, 0.8)
+  );
   height: 100%;
   width: 100%;
   position: absolute;
@@ -39,13 +44,25 @@
   z-index: 1;
   color: white;
   max-width: 800px;
-  padding: 20px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Title Styling */
@@ -53,6 +70,19 @@
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: #ff69b4; /* Pink color for the title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Subtitle Styling */
@@ -60,6 +90,19 @@
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 30px;
+  color: #ffffff;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Brain Image Styling */
@@ -69,23 +112,49 @@
   margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 1.5s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* About Section Styling */
 .about-section {
   margin: 40px 0;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about-title {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
+  color: #00bfff; /* Light blue color for the about title */
 }
 
 .about-description {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.6;
+  color: #ffffff;
 }
 
 /* Button Styles */
@@ -97,19 +166,54 @@
 }
 
 .button {
-  padding: 10px 20px;
-  background-color: #00bfff;
+  padding: 12px 24px;
+  background-color: #ff69b4; /* Pink color for buttons */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+  animation: pulse 2s infinite;
 }
 
 .button:hover {
-  background-color: #007bff;
+  background-color: #ff1493; /* Darker pink on hover */
   transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+}
+
+.button:last-child {
+  background-color: #00bfff; /* Light blue color for the second button */
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+  animation: pulseBlue 2s infinite;
+}
+
+.button:last-child:hover {
+  background-color: #009acd; /* Darker blue on hover */
+  box-shadow: 0 6px 20px rgba(0, 154, 205, 0.6);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulseBlue {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* Dashboard Container Styling */
@@ -695,4 +799,509 @@ Brain Tumor Test component */
 
 .classification-table tr:hover {
   background-color: #e6f7ff;
+}
+
+/*Login css*/
+
+/* General Styles */
+.login-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Left Side: Content Section */
+.login-content {
+  flex: 1;
+  padding: 40px;
+  background: linear-gradient(135deg, #ff6f61, #ffcc00); /* Vibrant gradient */
+  color: white;
+  border-radius: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.login-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.login-features {
+  margin-bottom: 30px;
+}
+
+.login-features h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.login-features li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.login-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00ff00;
+  font-size: 18px;
+}
+
+.login-cta {
+  font-size: 16px;
+}
+
+.login-cta a {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-cta a:hover {
+  color: #00bfff;
+  text-decoration: underline;
+}
+
+/* Right Side: Login Form */
+.login-form-container {
+  flex: 1;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ff6f61; /* Matching vibrant color */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+}
+
+.login-button {
+  padding: 12px;
+  background: #ff6f61; /* Vibrant button color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+  background: #ff3b2f; /* Darker shade on hover */
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+}
+
+/* General Styles */
+.register-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Left Side: Content Section */
+.register-content {
+  flex: 1;
+  padding: 40px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Vibrant gradient */
+  color: white;
+  border-radius: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.register-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.register-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.register-features {
+  margin-bottom: 30px;
+}
+
+.register-features h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.register-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.register-features li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.register-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00ff00;
+  font-size: 18px;
+}
+
+.register-cta {
+  font-size: 16px;
+}
+
+.register-cta a {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-cta a:hover {
+  color: #00bfff;
+  text-decoration: underline;
+}
+
+/* Right Side: Registration Form */
+.register-form-container {
+  flex: 1;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #6a11cb; /* Matching vibrant color */
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+}
+
+.register-button {
+  padding: 12px;
+  background: #6a11cb; /* Vibrant button color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.register-button:hover {
+  background: #2575fc; /* Gradient color on hover */
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+}
+
+/* General Styles */
+.dash-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Vibrant gradient */
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  animation: dashFadeIn 1s ease-in-out;
+}
+
+@keyframes dashFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dashboard Content Box */
+.dash-content-box {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 800px;
+  width: 100%;
+  animation: dashSlideInUp 1s ease-in-out;
+}
+
+@keyframes dashSlideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dashboard Heading */
+.dash-heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333; /* Dark text for contrast */
+}
+
+/* Dashboard Description */
+.dash-description {
+  font-size: 18px;
+  color: #555; /* Slightly lighter text */
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Dashboard Button Group */
+.dash-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Primary Button */
+.dash-btn-primary {
+  padding: 15px 30px;
+  background: #6a11cb; /* Vibrant button color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
+}
+
+.dash-btn-primary:hover {
+  background: #2575fc; /* Gradient color on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
+}
+
+/* Secondary Button */
+.dash-btn-secondary {
+  padding: 15px 30px;
+  background: #ff6f61; /* Vibrant secondary color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+}
+
+.dash-btn-secondary:hover {
+  background: #ff3b2f; /* Darker shade on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 59, 47, 0.6);
 }

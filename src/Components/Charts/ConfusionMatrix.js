@@ -16,13 +16,13 @@ const ConfusionMatrixChart = () => {
       text: "Confusion Matrix",
     },
     xAxis: {
-      categories: ["glioma", "meningioma", "notumor", "pituitary"],
+      categories: ["colon_aca", "color_n"],
       title: {
         text: "Predicted Label",
       },
     },
     yAxis: {
-      categories: ["glioma", "meningioma", "notumor", "pituitary"],
+      categories: ["colon_aca", "color_n"],
       title: {
         text: "Truth Label",
       },
@@ -30,7 +30,7 @@ const ConfusionMatrixChart = () => {
     },
     colorAxis: {
       min: 0,
-      max: 100, // Adjust this max value based on your data
+      max: 400, // Adjust this max value based on your data
       minColor: "#FFFFFF",
       maxColor: "#003366",
       stops: [
@@ -62,22 +62,10 @@ const ConfusionMatrixChart = () => {
         name: "Confusion Matrix",
         borderWidth: 1,
         data: [
-          [0, 0, 74], // [x, y, value]
-          [0, 1, 1],
-          [0, 2, 0],
-          [0, 3, 0],
-          [1, 0, 1],
-          [1, 1, 75],
-          [1, 2, 0],
-          [1, 3, 0],
-          [2, 0, 0],
-          [2, 1, 0],
-          [2, 2, 102],
-          [2, 3, 0],
-          [3, 0, 0],
-          [3, 1, 0],
-          [3, 2, 0],
-          [3, 3, 75],
+          [0, 0, 41], // [x, y, value] for colon_aca predicted as colon_aca
+          [0, 1, 0], // [x, y, value] for colon_aca predicted as color_n
+          [1, 0, 389], // [x, y, value] for color_n predicted as colon_aca
+          [1, 1, 389], // [x, y, value] for color_n predicted as color_n
         ],
         dataLabels: {
           enabled: true,

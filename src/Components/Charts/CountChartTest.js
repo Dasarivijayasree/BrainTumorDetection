@@ -12,7 +12,7 @@ const CountChartTest = () => {
       text: "Count of images in each class in Test Data",
     },
     xAxis: {
-      categories: ["glioma", "meningioma", "notumor", "pituitary"],
+      categories: ["aug_aca", "aug_n"],
       title: {
         text: null,
       },
@@ -52,7 +52,7 @@ const CountChartTest = () => {
     series: [
       {
         name: "Count",
-        data: [300, 306, 405, 300], // Replace with your actual counts
+        data: [786, 818], // Replace with your actual counts
         color: "#3498db", // You can change the bar color if needed
       },
     ],
